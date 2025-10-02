@@ -54,18 +54,34 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 - Pattern: `set_keymaps(nnoremap, {{key, fn}, {key2, fn2}}, {silent = true})`
 
 **Plugin Customizations:**
-- Codeium: Virtual text enabled with Tab to accept, Alt+] for next suggestion
-- NeoTree: Shows hidden/dotfiles, closes on file open with Enter
-- Harpoon 2: Custom extension closes NeoTree when navigating between files
+- Codeium: Virtual text enabled with Tab to accept, Alt+] for next suggestion, Alt+[ for previous
+- NeoTree: Shows hidden/dotfiles, closes automatically on file open (via autocmd in `lua/config/autocmds.lua`)
+- Harpoon 2: Excludes `harpoon` and `neo-tree` filetypes, auto-saves on toggle
   - `<leader>hx` - Add file to harpoon
   - `<leader>hm` - Toggle harpoon menu
-  - `<leader>hn` - Next harpoon file
+  - `<leader>hn` - Next harpoon file (wraps around)
   - `<leader>hp` - Previous harpoon file
 - Hop: Character-based navigation (f/F/t/T variants with leader key)
   - `<leader>f` - Hop forward to character
   - `<leader>F` - Hop backward to character
   - `<leader>t` - Hop forward before character
   - `<leader>T` - Hop backward before character
+- mini.ai: Advanced text objects with custom patterns (see `plugin/after/mini-ai.lua`)
+  - `o` - code blocks, conditionals, loops
+  - `f` - functions
+  - `c` - classes
+  - `d` - digits
+  - `e` - word with case
+  - `g` - whole buffer
+  - `u/U` - function calls
+
+**Custom Keymaps:**
+- `<leader>sa` - Select all (gg<S-v>G)
+- `U` - Redo (mapped to Ctrl-r)
+- `J/K` in visual mode - Move selected lines down/up
+
+**LSP Customizations:**
+- OmniSharp (C#): Semantic tokens disabled via autocmd
 
 ## Adding New Plugins
 
@@ -80,3 +96,10 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 - Disable unwanted LazyVim extras in `lua/plugins/disabled.lua`
 - Add custom options in `lua/config/options.lua`
 - Add custom keymaps in `lua/config/keymaps.lua`
+- Add custom autocmds in `lua/config/autocmds.lua`
+
+## Special Notes
+
+- Transparency: All background colors are set to `none` in `plugin/after/transparency.lua` for terminal transparency
+- Theme: Uses TokyoNight with custom highlight overrides (keywords: blue5, comments: #636da6)
+- `theme.lua` is a symlink to `/home/aidan/.config/omarchy/current/theme/neovim.lua`
