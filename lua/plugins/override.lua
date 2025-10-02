@@ -27,20 +27,6 @@ return {
           hide_gitignored = false,
         },
       },
-      window = {
-        mappings = {
-          ["<cr>"] = function(state)
-            local node = state.tree:get_node()
-            if node.type == "file" then
-              require("neo-tree.command").execute({ action = "close" })
-              vim.cmd("edit " .. node.path)
-            else
-              ---@diagnostic disable-next-line: missing-parameter
-              require("neo-tree.sources.filesystem").toggle_directory(state, node)
-            end
-          end,
-        },
-      },
     },
   },
 }
