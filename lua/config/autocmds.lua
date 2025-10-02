@@ -9,14 +9,24 @@
 
 -- Close NeoTree when opening a file
 vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*",
-	callback = function()
-		local filetype = vim.bo.filetype
-		-- Only close NeoTree if we're entering a normal file buffer
-		if filetype ~= "neo-tree" and filetype ~= "" and vim.bo.buftype == "" then
-			pcall(function()
-				require("neo-tree.command").execute({ action = "close" })
-			end)
-		end
-	end,
+  pattern = "*",
+  callback = function()
+    local filetype = vim.bo.filetype
+    -- Only close NeoTree if we're entering a normal file buffer
+    if filetype ~= "neo-tree" and filetype ~= "" and vim.bo.buftype == "" then
+      pcall(function()
+        require("neo-tree.command").execute({ action = "close" })
+      end)
+    end
+  end,
+})
+
+-- Disable semantic tokens for C#
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "omnisharp" then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
+  end,
 })
