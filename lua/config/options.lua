@@ -9,9 +9,6 @@ vim.opt.termguicolors = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.expandtab = false
-vim.opt.tabstop = 3
-vim.opt.shiftwidth = 3
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.scrolloff = 15
