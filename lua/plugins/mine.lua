@@ -30,4 +30,6 @@ return {
       require("scrollEOF").setup()
     end,
   }, -- Scroll past end of file
+
+  { "nvim-mini/mini.ai", event = "VeryLazy" }, -- Advanced text objects
 }
