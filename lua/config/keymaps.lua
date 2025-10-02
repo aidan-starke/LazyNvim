@@ -3,7 +3,6 @@
 -- Add any additional keymaps here
 
 -- Normal mode
-vim.keymap.set("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open ToggleTerm" })
 vim.keymap.set("n", "<leader>sa", "gg<S-v>G", { desc = "Select All" })
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
