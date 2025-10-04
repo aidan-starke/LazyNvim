@@ -20,9 +20,19 @@ return {
     "folke/snacks.nvim",
     opts = {
       picker = {
+        focus = "list",
         sources = {
           explorer = {
             auto_close = true,
+          },
+          files = {
+            focus = "input",
+          },
+          grep = {
+            focus = "input",
+          },
+          config = {
+            focus = "input",
           },
         },
       },
