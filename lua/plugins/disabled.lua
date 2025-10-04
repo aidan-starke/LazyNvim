@@ -21,4 +21,5 @@ return {
   { "vim-dadbod-ui", enabled = false },
   { "edgy.nvim", enabled = false },
   { "kulala.nvim", enabled = false },
+  { "neo-tree.nvim", enabled = false },
 }

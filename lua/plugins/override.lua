@@ -17,14 +17,13 @@ return {
   },
 
   {
-    "nvim-neo-tree/neo-tree.nvim",
+    "folke/snacks.nvim",
     opts = {
-      close_if_last_window = false,
-      filesystem = {
-        filtered_items = {
-          visible = true,
-          hide_dotfiles = false,
-          hide_gitignored = false,
+      picker = {
+        sources = {
+          explorer = {
+            auto_close = true,
+          },
         },
       },
     },

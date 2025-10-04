@@ -5,7 +5,7 @@ end
 
 ---@diagnostic disable-next-line: missing-fields
 harpoon.setup({
-  excluded_filetypes = { "harpoon", "neo-tree" },
+  excluded_filetypes = { "harpoon", "snacks_picker_list" },
   settings = {
     save_on_toggle = true,
     sync_on_ui_close = true,
