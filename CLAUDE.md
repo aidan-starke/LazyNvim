@@ -17,9 +17,9 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
   - `keymaps.lua` - Custom keymaps (beyond LazyVim defaults)
   - `autocmds.lua` - Custom autocommands
 - `lua/plugins/` - Plugin specifications
-  - `mine.lua` - Additional plugins (Harpoon, Hop, nvim-surround, wildfire, scrollEOF, render-markdown)
-  - `override.lua` - LazyVim plugin overrides (Codeium, neo-tree)
-  - `disabled.lua` - Disabled LazyVim extras (bufferline, flash, CopilotChat, etc.)
+  - `mine.lua` - Additional plugins (Harpoon, Hop, nvim-surround, wildfire, scrollEOF, render-markdown, mini.ai, vim-sleuth)
+  - `override.lua` - LazyVim plugin overrides (Codeium, Snacks explorer, ESLint)
+  - `disabled.lua` - Disabled LazyVim plugins (bufferline, flash, CopilotChat, neo-tree, etc.)
   - `theme.lua` - Color scheme configuration
   - `example.lua` - Example plugin configuration
 - `lua/setup/` - Utility modules
@@ -55,7 +55,9 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 
 **Plugin Customizations:**
 - Codeium: Virtual text enabled with Tab to accept, Alt+] for next suggestion, Alt+[ for previous
-- NeoTree: Shows hidden/dotfiles, closes automatically on file open (via autocmd in `lua/config/autocmds.lua`)
+- Snacks Explorer: Auto-closes after selecting a file (configured in `lua/plugins/override.lua`)
+- ESLint: Only starts when a config file is found (configured via root_dir override in `lua/plugins/override.lua`)
+- vim-sleuth: Auto-detects indentation from file content
 - Harpoon 2: Excludes `harpoon` and `neo-tree` filetypes, auto-saves on toggle
   - `<leader>hx` - Add file to harpoon
   - `<leader>hm` - Toggle harpoon menu
@@ -97,6 +99,17 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 - Add custom options in `lua/config/options.lua`
 - Add custom keymaps in `lua/config/keymaps.lua`
 - Add custom autocmds in `lua/config/autocmds.lua`
+
+## LazyVim Extras
+
+Enabled extras (from `lazyvim.json`):
+- AI: Codeium
+- Coding: Yanky (yank history)
+- Editor: inc-rename, Snacks explorer
+- Formatting: Prettier
+- Languages: Docker, Git, JSON, Markdown, OmniSharp (C#), Prisma, Rust, Tailwind, TypeScript, YAML
+- Linting: ESLint
+- Utilities: dot, mini-hipatterns
 
 ## Special Notes
 
