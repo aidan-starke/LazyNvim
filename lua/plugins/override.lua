@@ -25,7 +25,6 @@ return {
           explorer = {
             hidden = true,
             auto_close = true,
-            focus = "input",
           },
           files = {
             hidden = true,
