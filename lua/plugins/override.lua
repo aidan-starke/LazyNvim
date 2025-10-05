@@ -23,10 +23,12 @@ return {
         focus = "list",
         sources = {
           explorer = {
+            hidden = true,
             auto_close = true,
             focus = "input",
           },
           files = {
+            hidden = true,
             focus = "input",
           },
           grep = {
