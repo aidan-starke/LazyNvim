@@ -23,23 +23,27 @@ set_keymaps(nnoremap, {
     function()
       harpoon:list():add()
     end,
+    "Add to harpoon",
   },
   {
     "<leader>hm",
     function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end,
+    "Harpoon menu",
   },
   {
     "<leader>hn",
     function()
       harpoon:list():next({ ui_nav_wrap = true })
     end,
+    "Next harpoon",
   },
   {
     "<leader>hp",
     function()
       harpoon:list():prev()
     end,
+    "Previous harpoon",
   },
 }, { silent = true })

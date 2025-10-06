@@ -5,11 +5,17 @@ M.merge_tables = function(...)
 end
 
 M.set_keymaps = function(set_keymap, pairs, opts)
+	opts = opts or {}
 	for _, pair in ipairs(pairs) do
 		---@diagnostic disable-next-line: deprecated
-		local key, map = unpack(pair)
+		local key, map, desc = unpack(pair)
 
-		set_keymap(key, map, opts)
+		local keymap_opts = opts
+		if desc then
+			keymap_opts = vim.tbl_extend("force", opts, { desc = desc })
+		end
+
+		set_keymap(key, map, keymap_opts)
 	end
 end
 
