@@ -7,7 +7,7 @@ return {
 
   { "phaazon/hop.nvim", event = "VeryLazy" }, -- Hop to a character
 
-  { "MeanderingProgrammer/render-markdown.nvim", event = "VeryLazy" }, -- Render markdown
+  { "MeanderingProgrammer/render-markdown.nvim", ft = "markdown" }, -- Render markdown
 
   {
     "kylechui/nvim-surround",

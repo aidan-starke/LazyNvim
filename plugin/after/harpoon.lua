@@ -42,7 +42,7 @@ set_keymaps(nnoremap, {
   {
     "<leader>hp",
     function()
-      harpoon:list():prev()
+      harpoon:list():prev({ ui_nav_wrap = true })
     end,
     "Previous harpoon",
   },
