@@ -22,6 +22,9 @@ return {
       picker = {
         focus = "list",
         sources = {
+          select = {
+            focus = "input",
+          },
           explorer = {
             hidden = true,
             auto_close = true,
