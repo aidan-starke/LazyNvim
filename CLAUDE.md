@@ -17,11 +17,10 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
   - `keymaps.lua` - Custom keymaps (beyond LazyVim defaults)
   - `autocmds.lua` - Custom autocommands
 - `lua/plugins/` - Plugin specifications
-  - `mine.lua` - Additional plugins (Harpoon, Hop, nvim-surround, wildfire, scrollEOF, render-markdown, mini.ai, vim-sleuth)
-  - `override.lua` - LazyVim plugin overrides (Codeium, Snacks explorer, ESLint)
+  - `mine.lua` - Additional plugins (Harpoon, Hop, nvim-surround, wildfire, scrollEOF, render-markdown, vim-sleuth)
+  - `override.lua` - LazyVim plugin overrides (Codeium, Snacks picker/explorer, ESLint, conform)
   - `disabled.lua` - Disabled LazyVim plugins (bufferline, flash, CopilotChat, neo-tree, etc.)
   - `theme.lua` - Color scheme configuration
-  - `example.lua` - Example plugin configuration
 - `lua/setup/` - Utility modules
   - `keymap.lua` - Keymap binding helpers (nnoremap, vnoremap, etc.)
   - `helpers.lua` - General helper functions (merge_tables, set_keymaps)
@@ -39,7 +38,7 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 - Plugin updates are checked automatically but notifications are disabled
 
 **Editor Preferences:**
-- Uses real tabs (not spaces) with `tabstop=3` and `shiftwidth=3`
+- Uses vim-sleuth for automatic indentation detection (no hardcoded tab settings)
 - Line numbers shown with relative numbering
 - Clipboard integration with system clipboard (`unnamedplus`)
 - No swap files
@@ -55,32 +54,40 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 
 **Plugin Customizations:**
 - Codeium: Virtual text enabled with Tab to accept, Alt+] for next suggestion, Alt+[ for previous
-- Snacks Explorer: Auto-closes after selecting a file (configured in `lua/plugins/override.lua`)
+- Snacks Picker:
+  - Default focus on list, except for files/grep/config/select sources which focus input
+  - Explorer source shows hidden files and auto-closes after file selection
 - ESLint: Only starts when a config file is found (configured via root_dir override in `lua/plugins/override.lua`)
+- Conform (formatting):
+  - C#: Uses csharpier formatter
+  - Prettier: Runs without requiring config file (`lazyvim_prettier_needs_config = false`)
 - vim-sleuth: Auto-detects indentation from file content
-- Harpoon 2: Excludes `harpoon` and `neo-tree` filetypes, auto-saves on toggle
+- Harpoon 2: Excludes `harpoon` and `snacks_picker_list` filetypes, auto-saves on toggle
   - `<leader>hx` - Add file to harpoon
   - `<leader>hm` - Toggle harpoon menu
   - `<leader>hn` - Next harpoon file (wraps around)
-  - `<leader>hp` - Previous harpoon file
+  - `<leader>hp` - Previous harpoon file (wraps around)
 - Hop: Character-based navigation (f/F/t/T variants with leader key)
   - `<leader>f` - Hop forward to character
   - `<leader>F` - Hop backward to character
   - `<leader>t` - Hop forward before character
   - `<leader>T` - Hop backward before character
-- mini.ai: Advanced text objects with custom patterns (see `plugin/after/mini-ai.lua`)
-  - `o` - code blocks, conditionals, loops
-  - `f` - functions
-  - `c` - classes
+- mini.ai: Uses LazyVim's default configuration (treesitter-based text objects)
+  - `o` - code blocks, conditionals, loops (treesitter)
+  - `f` - functions (treesitter)
+  - `c` - classes (treesitter)
+  - `t` - HTML/XML tags
   - `d` - digits
   - `e` - word with case
   - `g` - whole buffer
   - `u/U` - function calls
+- render-markdown: Lazy-loads only for markdown files
 
 **Custom Keymaps:**
 - `<leader>sa` - Select all (gg<S-v>G)
 - `U` - Redo (mapped to Ctrl-r)
 - `J/K` in visual mode - Move selected lines down/up
+- `<leader>p` in visual mode - Paste without yanking replaced text
 
 **LSP Customizations:**
 - OmniSharp (C#): Semantic tokens disabled via autocmd
@@ -113,6 +120,7 @@ Enabled extras (from `lazyvim.json`):
 
 ## Special Notes
 
-- Transparency: All background colors are set to `none` in `plugin/after/transparency.lua` for terminal transparency
-- Theme: Uses TokyoNight with custom highlight overrides (keywords: blue5, comments: #636da6)
+- Transparency: All background colors are set to `none` in `plugin/after/transparency.lua` for terminal transparency (includes Snacks picker, Notify, etc.)
+- Theme: Uses TokyoNight with custom highlight overrides (keywords: blue5, comments: #636da6, custom line numbers)
 - `theme.lua` is a symlink to `/home/aidan/.config/omarchy/current/theme/neovim.lua`
+- LazyVim's mini.ai is used instead of custom configuration - provides treesitter-based text objects that work across all languages
