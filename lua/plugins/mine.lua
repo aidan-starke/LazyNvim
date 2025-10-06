@@ -31,7 +31,5 @@ return {
     end,
   }, -- Scroll past end of file
 
-  { "nvim-mini/mini.ai", event = "VeryLazy" }, -- Advanced text objects
-
   { "tpope/vim-sleuth" }, -- Auto-detect indentation
 }
