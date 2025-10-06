@@ -5,8 +5,6 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
   },
 
-  { "phaazon/hop.nvim", event = "VeryLazy" }, -- Hop to a character
-
   { "MeanderingProgrammer/render-markdown.nvim", ft = "markdown" }, -- Render markdown
 
   {
