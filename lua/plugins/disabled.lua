@@ -4,7 +4,6 @@ return {
   { "persistence.nvim", enabled = false },
   { "folke/trouble.nvim", enabled = false },
   { "CopilotChat.nvim", enabled = false },
-  { "mini/surround.nvim", enabled = false },
   { "neogen", enabled = false },
   { "aerial.nvim", enabled = false },
   { "dial.nvim", enabled = false },
