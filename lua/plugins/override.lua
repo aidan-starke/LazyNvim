@@ -27,10 +27,12 @@ return {
           },
           explorer = {
             hidden = true,
+            ignored = true,
             auto_close = true,
           },
           files = {
             hidden = true,
+            ignored = true,
             focus = "input",
           },
           grep = {
