@@ -1,5 +1,6 @@
 return {
   { "bufferline.nvim", enabled = false },
+  { "flash.nvim", enabled = false },
   { "grug-far.nvim", enabled = false },
   { "persistence.nvim", enabled = false },
   { "folke/trouble.nvim", enabled = false },
