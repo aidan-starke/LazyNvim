@@ -23,13 +23,5 @@ return {
     event = "VeryLazy",
   }, -- Smart selection
 
-  {
-    "Aasim-A/scrollEOF.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("scrollEOF").setup()
-    end,
-  }, -- Scroll past end of file
-
   { "tpope/vim-sleuth" }, -- Auto-detect indentation
 }
