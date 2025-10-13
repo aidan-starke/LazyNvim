@@ -10,28 +10,28 @@ local set_keymaps, remap = require("setup.helpers").set_keymaps, require("setup.
 
 set_keymaps(remap, {
   {
-    "<leader>f",
+    "f",
     function()
       hint({ direction = directions.AFTER_CURSOR })
     end,
     "Hop forward to char",
   },
   {
-    "<leader>F",
+    "F",
     function()
       hint({ direction = directions.BEFORE_CURSOR })
     end,
     "Hop backward to char",
   },
   {
-    "<leader>t",
+    "t",
     function()
       hint({ direction = directions.AFTER_CURSOR, hint_offset = -1 })
     end,
     "Hop forward before char",
   },
   {
-    "<leader>T",
+    "T",
     function()
       hint({ direction = directions.BEFORE_CURSOR, hint_offset = -1 })
     end,
