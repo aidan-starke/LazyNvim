@@ -75,12 +75,26 @@ return {
     opts = {
       formatters_by_ft = {
         cs = { "csharpier" },
+        sql = { "sqlfluff" },
       },
       formatters = {
         csharpier = {
           command = "csharpier",
           args = { "format", "--write-stdout" },
         },
+        sqlfluff = {
+          args = { "format", "--dialect=sqlite", "-" },
+        },
+      },
+    },
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    opts = {
+      linters_by_ft = {
+        -- Make sure sql is NOT here, or is empty
+        sql = {}, -- No linters for SQL
       },
     },
   },
