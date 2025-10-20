@@ -6,6 +6,11 @@
 vim.keymap.set("n", "<leader>sa", "gg<S-v>G", { desc = "Select All" })
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
+-- Disable LazyVim's <leader>f prefix bindings (conflicts with Hop)
+vim.keymap.del("n", "<leader>fn")
+vim.keymap.del("n", "<leader>fT")
+vim.keymap.del("n", "<leader>ft")
+
 -- Visual mode
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move line up" })

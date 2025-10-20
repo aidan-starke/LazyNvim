@@ -44,6 +44,16 @@ return {
         },
       },
     },
+    keys = {
+      { "<leader>sR", false },
+      {
+        "\\\\",
+        function()
+          require("snacks").picker.resume()
+        end,
+        desc = "Resume Last Picker",
+      },
+    },
   },
 
   {
