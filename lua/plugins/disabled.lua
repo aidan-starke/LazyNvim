@@ -7,7 +7,6 @@ return {
   { "CopilotChat.nvim", enabled = false },
   { "mini/surround.nvim", enabled = false },
   { "neogen", enabled = false },
-  { "aerial.nvim", enabled = false },
   { "dial.nvim", enabled = false },
   { "leap.nvim", enabled = false },
   { "outline.nvim", enabled = false },

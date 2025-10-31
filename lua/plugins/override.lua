@@ -108,4 +108,11 @@ return {
       },
     },
   },
+
+  {
+    "stevearc/aerial.nvim",
+    keys = {
+      { "<leader>r", "<cmd>AerialToggle!<cr>", desc = "Aerial (Symbols)" },
+    },
+  },
 }
