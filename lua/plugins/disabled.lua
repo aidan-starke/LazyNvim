@@ -9,7 +9,7 @@ return {
   { "neogen", enabled = false },
   { "dial.nvim", enabled = false },
   { "leap.nvim", enabled = false },
-  { "outline.nvim", enabled = false },
+  { "aerial.nvim", enabled = false },
   { "overseer.nvim", enabled = false },
   { "refactoring.nvim", enabled = false },
   { "nvim-ansible", enabled = false },
