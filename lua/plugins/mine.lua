@@ -24,4 +24,10 @@ return {
   }, -- Smart selection
 
   { "tpope/vim-sleuth" }, -- Auto-detect indentation
+
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
 }
