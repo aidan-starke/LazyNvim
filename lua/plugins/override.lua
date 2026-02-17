@@ -86,6 +86,8 @@ return {
       formatters_by_ft = {
         cs = { "csharpier" },
         sql = { "sqlfluff" },
+        svelte = { "prettier" },
+        go = { "goimports" },
       },
       formatters = {
         csharpier = {

@@ -30,4 +30,11 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+
+  {
+    "akinsho/git-conflict.nvim",
+    event = "VeryLazy",
+    version = "*",
+    config = true,
+  }, -- Git conflicts
 }
