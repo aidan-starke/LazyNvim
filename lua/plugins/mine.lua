@@ -37,4 +37,10 @@ return {
     version = "*",
     config = true,
   }, -- Git conflicts
+
+  {
+    "petertriho/nvim-scrollbar",
+    event = "VeryLazy",
+    dependencies = { "tokyonight.nvim", "lewis6991/gitsigns.nvim" },
+  },
 }
