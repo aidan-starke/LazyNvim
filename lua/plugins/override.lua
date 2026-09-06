@@ -88,8 +88,17 @@ return {
         sql = { "sqlfluff" },
         svelte = { "prettier" },
         go = { "goimports" },
+        javascript = { "biome", "prettier", stop_after_first = true },
+        javascriptreact = { "biome", "prettier", stop_after_first = true },
+        typescript = { "biome", "prettier", stop_after_first = true },
+        typescriptreact = { "biome", "prettier", stop_after_first = true },
+        json = { "biome", "prettier", stop_after_first = true },
+        jsonc = { "biome", "prettier", stop_after_first = true },
       },
       formatters = {
+        biome = {
+          require_cwd = true,
+        },
         csharpier = {
           command = "csharpier",
           args = { "format", "--write-stdout" },
