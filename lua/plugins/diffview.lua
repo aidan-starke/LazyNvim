@@ -7,6 +7,7 @@ return {
     { "<leader>dh", "<cmd>DiffviewFileHistory<cr>", desc = "Branch History" },
     { "<leader>dc", "<cmd>DiffviewClose<cr>", desc = "Diffview Close" },
     { "<leader>dm", "<cmd>DiffviewOpen main<cr>", desc = "Diff main" },
+    { "<leader>dp", "<cmd>DiffviewOpen origin/main...HEAD<cr>", desc = "Diff PR (origin/main...HEAD)" },
   },
   opts = {
     enhanced_diff_hl = true,
