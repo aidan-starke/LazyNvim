@@ -40,6 +40,7 @@ return {
 
   {
     "petertriho/nvim-scrollbar",
+    branch = "refactor/v2", -- TODO: drop after 2026-11-16, when v2 lands on main
     event = "VeryLazy",
     dependencies = { "tokyonight.nvim", "lewis6991/gitsigns.nvim" },
   },

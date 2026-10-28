@@ -4,7 +4,6 @@ return {
   { "grug-far.nvim", enabled = false },
   { "persistence.nvim", enabled = false },
   { "folke/trouble.nvim", enabled = false },
-  { "CopilotChat.nvim", enabled = false },
   { "mini/surround.nvim", enabled = false },
   { "neogen", enabled = false },
   { "dial.nvim", enabled = false },

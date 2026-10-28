@@ -18,8 +18,8 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
   - `autocmds.lua` - Custom autocommands
 - `lua/plugins/` - Plugin specifications
   - `mine.lua` - Additional plugins (Harpoon, Hop, nvim-surround, wildfire, scrollEOF, render-markdown, vim-sleuth)
-  - `override.lua` - LazyVim plugin overrides (Codeium, Snacks picker/explorer, ESLint, conform)
-  - `disabled.lua` - Disabled LazyVim plugins (bufferline, flash, CopilotChat, neo-tree, etc.)
+  - `override.lua` - LazyVim plugin overrides (Snacks picker/explorer, ESLint, conform)
+  - `disabled.lua` - Disabled LazyVim plugins (bufferline, flash, neo-tree, etc.)
   - `theme.lua` - Color scheme configuration
 - `lua/setup/` - Utility modules
   - `keymap.lua` - Keymap binding helpers (nnoremap, vnoremap, etc.)
@@ -53,7 +53,6 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 - Pattern: `set_keymaps(nnoremap, {{key, fn}, {key2, fn2}}, {silent = true})`
 
 **Plugin Customizations:**
-- Codeium: Virtual text enabled with Tab to accept, Alt+] for next suggestion, Alt+[ for previous
 - Snacks Picker:
   - Default focus on list, except for files/grep/config/select sources which focus input
   - Explorer source shows hidden files and auto-closes after file selection
@@ -110,7 +109,6 @@ This is a LazyVim-based Neovim configuration. LazyVim is a Neovim starter templa
 ## LazyVim Extras
 
 Enabled extras (from `lazyvim.json`):
-- AI: Codeium
 - Coding: Yanky (yank history)
 - Editor: inc-rename, Snacks explorer
 - Formatting: Prettier

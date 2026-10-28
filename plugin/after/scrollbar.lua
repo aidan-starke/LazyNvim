@@ -6,20 +6,21 @@ end
 local colors = require("tokyonight.colors").setup()
 
 scrollbar.setup({
-  handle = {
-    color = colors.bg_highlight,
-  },
   marks = {
-    Search = { color = colors.orange },
-    Error = { color = colors.error },
-    Warn = { color = colors.warning },
-    Info = { color = colors.info },
-    Hint = { color = colors.hint },
-    Misc = { color = colors.purple },
-    GitAdd = { color = colors.green },
-    GitChange = { color = colors.blue },
-    GitDelete = { color = colors.red1 },
+    Search = { highlight = { fg = colors.orange } },
+    Error = { highlight = { fg = colors.error } },
+    Warn = { highlight = { fg = colors.warning } },
+    Info = { highlight = { fg = colors.info } },
+    Hint = { highlight = { fg = colors.hint } },
+    Misc = { highlight = { fg = colors.purple } },
+    GitAdd = { highlight = { fg = colors.green } },
+    GitChange = { highlight = { fg = colors.blue } },
+    GitDelete = { highlight = { fg = colors.red1 } },
+  },
+  providers = { gitsigns = true },
+  scrollbar = {
+    thumb = {
+      highlight = { bg = colors.bg_highlight },
+    },
   },
 })
-
-require("scrollbar.handlers.gitsigns").setup()
