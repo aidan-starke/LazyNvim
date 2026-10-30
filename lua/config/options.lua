@@ -23,6 +23,20 @@ vim.g.mapleader = " "
 
 vim.opt.clipboard:append({ "unnamedplus" })
 
+-- Over SSH there's no local clipboard tool, so yank via OSC 52 to the client terminal.
+-- Paste reads the unnamed register: OSC 52 reads hang or prompt in most terminals.
+if vim.env.SSH_TTY then
+  local osc52 = require("vim.ui.clipboard.osc52")
+  local function paste()
+    return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+  end
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = { ["+"] = osc52.copy("+"), ["*"] = osc52.copy("*") },
+    paste = { ["+"] = paste, ["*"] = paste },
+  }
+end
+
 vim.opt.updatetime = 50
 
 vim.opt.wildmenu = true
